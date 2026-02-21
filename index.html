@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Abdul Nafay - Expert Front-End Developer and Graphic Designer in Pakistan. Creating responsive, high-performance websites and unique visual designs.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdul Nafay</title>
+    
+    <meta name="description" content="Abdul Nafay - Expert Front-End Developer and Graphic Designer in Pakistan. Creating responsive, high-performance websites and unique visual designs.">
+    
     <link id="dynamic-favicon" rel="icon" type="image/png" href="dark.png">
+    
     <style>
         body, html {
             margin: 0;
@@ -13,7 +16,12 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background-color: #000; /* Prevents white flash during load */
+            background-color: #000;
+        }
+        /* Wrap the iframe in a main landmark */
+        main {
+            height: 100%;
+            width: 100%;
         }
         iframe {
             border: none;
@@ -25,7 +33,9 @@
 </head>
 <body>
 
-    <iframe id="theme-preview"></iframe>
+    <main>
+        <iframe id="theme-preview" title="Abdul Nafay Portfolio Content"></iframe>
+    </main>
 
     <script>
         (function() {
@@ -35,28 +45,21 @@
             const lightUrl = "https://abdul-nafay-light.vercel.app";
             const darkUrl = "https://abdul-nafay-dark.vercel.app";
 
-            // Function to update theme based on system preference
             function updateTheme(e) {
                 const isLight = e.matches;
 
                 if (isLight) {
                     frame.src = lightUrl;
                     favicon.href = "logo.png";
-                    document.title = "Abdul Nafay";
                 } else {
                     frame.src = darkUrl;
                     favicon.href = "dark.png";
-                    document.title = "Abdul Nafay";
                 }
+                document.title = "Abdul Nafay";
             }
 
-            // Create the media query matcher
             const themeMatcher = window.matchMedia('(prefers-color-scheme: light)');
-
-            // Run once on load
             updateTheme(themeMatcher);
-
-            // Listen for system theme changes in real-time
             themeMatcher.addEventListener('change', updateTheme);
         })();
     </script>
