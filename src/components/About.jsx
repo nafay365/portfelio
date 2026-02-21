@@ -27,7 +27,7 @@ const ServiceCard = ({ index, title, icon }) => (
           className='w-16 h-16 object-contain'
         />
 
-        <h3 className='dark:text-white text-gray-900 text-[20px] font-bold text-center'>
+        <h3 className='text-white text-[20px] font-bold text-center'>
           {title}
         </h3>
       </div>
@@ -45,11 +45,11 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 dark:text-secondary text-gray-600 text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Hi, I'm Abdul Nafay, a Pakistan-based high school student with a deep-rooted passion for the intersection of design and code. As a Graphic Designer advanced in Adobe Illustrator and a seasoned Video Editor, I specialize in creating visual stories that stick.
+        Hi, I’m Abdul Nafay, a Pakistan-based high school student with a deep-rooted passion for the intersection of design and code. As a Graphic Designer advanced in Adobe Illustrator and a seasoned Video Editor, I specialize in creating visual stories that stick.
         <br /><br />
-        Beyond the visuals, I build for the web. I am an Intermediate Frontend Developer with a solid foundation in Backend Development, allowing me to bridge the gap between aesthetic design and functional technology. I don't just create things that look good—I build things that work.
+        Beyond the visuals, I build for the web. I am an Intermediate Frontend Developer with a solid foundation in Backend Development, allowing me to bridge the gap between aesthetic design and functional technology. I don’t just create things that look good—I build things that work.
         <br /><br />
         What sets me apart is my mastery of the physical machine. I specialize in Computer Hardware & Software Repair, with a technical understanding of hardware at a microscopic level. Whether it is troubleshooting complex software environments or performing precision component-level hardware diagnostics, I bridge the gap between digital creativity and physical engineering.
       </motion.p>
@@ -64,4 +64,3 @@ const About = () => {
 };
 
 export default SectionWrapper(About, "about");
-

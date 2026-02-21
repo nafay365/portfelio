@@ -17,14 +17,14 @@ const FeedbackCard = ({
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className='glass-card p-10 rounded-3xl w-full'
   >
-    <p className='dark:text-white text-gray-900 font-black text-[48px]'>"</p>
+    <p className='text-white font-black text-[48px]'>"</p>
 
     <div className='mt-1'>
-      <p className='dark:text-white text-gray-900 tracking-wider text-[18px] whitespace-pre-line'>{testimonial}</p>
+      <p className='text-white tracking-wider text-[18px] whitespace-pre-line'>{testimonial}</p>
 
       <div className='mt-7 flex justify-between items-center gap-1'>
         <div className='flex-1 flex flex-col'>
-          <p className='dark:text-white text-gray-900 font-medium text-[16px]'>
+          <p className='text-white font-medium text-[16px]'>
             <span className='blue-text-gradient'>@</span> {name}
           </p>
 

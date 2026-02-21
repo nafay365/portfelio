@@ -10,7 +10,6 @@ import {
 } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-import useDeviceDetect from "../../hooks/useDeviceDetect";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -47,7 +46,7 @@ const Ball = (props) => {
           <Decal
             position={[0, 0, 1]}
             rotation={[2 * Math.PI, 0, 6.25]}
-            scale={0.5}
+            scale={1}
             map={decal}
             flatShading
           />
@@ -58,24 +57,6 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  const { shouldUse2D } = useDeviceDetect();
-
-  // For mobile/low-end devices, show 2D flat version
-  if (shouldUse2D) {
-    return (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center p-2">
-          <img 
-            src={icon} 
-            alt="tech icon" 
-            className="w-full h-full object-contain"
-            style={{ imageRendering: 'auto' }}
-          />
-        </div>
-      </div>
-    );
-  }
-
   return (
     <Canvas
       frameloop='always'

@@ -10,7 +10,7 @@ const PlanetModel = () => {
     // Auto-rotate the planet continuously
     useFrame((state, delta) => {
         if (planetRef.current) {
-            planetRef.current.rotation.y += delta * 1; // Adjust speed as needed
+            planetRef.current.rotation.y += delta * 0.5; // Adjust speed as needed
         }
     });
 
@@ -33,7 +33,7 @@ const PlanetCanvas = () => {
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}
             camera={{
-                fov: 50,
+                fov: 45,
                 near: 0.1,
                 far: 200,
                 position: [-4, 3, 6],
@@ -47,9 +47,9 @@ const PlanetCanvas = () => {
             <OrbitControls
                 enableZoom={false}
                 enablePan={false}
-                enableRotate={true}
-                maxPolarAngle={Math.PI/2}
-                minPolarAngle={Math.PI/2}
+                enableRotate={false}
+                maxPolarAngle={Math.PI / 2}
+                minPolarAngle={Math.PI / 2}
             />
 
             <Preload all />
