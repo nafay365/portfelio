@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Nafay</title>
+    <link id="dynamic-favicon" rel="icon" type="image/x-icon" href="">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000; /* Dark background to prevent white flash */
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="theme-preview"></iframe>
+
+    <script>
+        (function() {
+            const frame = document.getElementById('theme-preview');
+            const favicon = document.getElementById('dynamic-favicon');
+            
+            const lightUrl = "https://abdul-nafay-light.vercel.app";
+            const darkUrl = "https://abdul-nafay-dark.vercel.app";
+
+            // Check if system is specifically Light Mode
+            const isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+            if (isLight) {
+                frame.src = lightUrl;
+                favicon.href = lightUrl + "/favicon.ico";
+                document.title = "Abdul Nafay - Light";
+            } else {
+                // Default for Dark Mode or any other state/error
+                frame.src = darkUrl;
+                favicon.href = darkUrl + "/favicon.ico";
+                document.title = "Abdul Nafay - Dark";
+            }
+        })();
+    </script>
+</body>
+</html>
