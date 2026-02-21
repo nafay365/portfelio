@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdul Nafay</title>
-    <link id="dynamic-favicon" rel="icon" type="image/x-icon" href="">
+    <link id="dynamic-favicon" rel="icon" type="image/png" href="dark.png">
     <style>
         body, html {
             margin: 0;
@@ -12,7 +12,7 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background-color: #000; /* Dark background to prevent white flash */
+            background-color: #000; /* Prevents white flash during load */
         }
         iframe {
             border: none;
@@ -34,19 +34,29 @@
             const lightUrl = "https://abdul-nafay-light.vercel.app";
             const darkUrl = "https://abdul-nafay-dark.vercel.app";
 
-            // Check if system is specifically Light Mode
-            const isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            // Function to update theme based on system preference
+            function updateTheme(e) {
+                const isLight = e.matches;
 
-            if (isLight) {
-                frame.src = lightUrl;
-                favicon.href = lightUrl;
-                document.title = "Abdul Nafay ";
-            } else {
-                // Default for Dark Mode or any other state/error
-                frame.src = darkUrl;
-                favicon.href = darkUrl ;
-                document.title = "Abdul Nafay";
+                if (isLight) {
+                    frame.src = lightUrl;
+                    favicon.href = "logo.png";
+                    document.title = "Abdul Nafay";
+                } else {
+                    frame.src = darkUrl;
+                    favicon.href = "dark.png";
+                    document.title = "Abdul Nafay";
+                }
             }
+
+            // Create the media query matcher
+            const themeMatcher = window.matchMedia('(prefers-color-scheme: light)');
+
+            // Run once on load
+            updateTheme(themeMatcher);
+
+            // Listen for system theme changes in real-time
+            themeMatcher.addEventListener('change', updateTheme);
         })();
     </script>
 </body>
