@@ -16,11 +16,11 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "var(--glass-bg)",
+        background: "rgba(255, 255, 255, 0.05)",
         backdropFilter: "blur(10px)",
-        border: "1px solid var(--glass-border)",
-        color: "var(--text-primary)",
-        boxShadow: "0 8px 32px 0 var(--glass-shadow)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        color: "#fff",
+        boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
@@ -36,9 +36,9 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='dark:text-white text-gray-900 text-[24px] font-bold'>{experience.title}</h3>
+        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
         <p
-          className='dark:text-secondary text-gray-600 text-[16px] font-semibold'
+          className='text-secondary text-[16px] font-semibold'
           style={{ margin: 0 }}
         >
           {experience.company_name}
@@ -49,7 +49,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='dark:text-white-100 text-gray-700 text-[14px] pl-1 tracking-wider'
+            className='text-white-100 text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -86,4 +86,3 @@ const Experience = () => {
 };
 
 export default SectionWrapper(Experience, "work");
-

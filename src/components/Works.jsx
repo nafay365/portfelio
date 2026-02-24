@@ -36,7 +36,7 @@ const ProjectCard = ({
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient dark:black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
             >
               <img
                 src={github}
@@ -48,8 +48,8 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className='dark:text-white text-gray-900 font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 dark:text-secondary text-gray-600 text-[14px]'>{description}</p>
+          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
+          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>

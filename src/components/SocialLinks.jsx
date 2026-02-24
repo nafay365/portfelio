@@ -25,7 +25,7 @@ const SocialLinks = () => {
                             href={social.link}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='w-20 h-20 dark:bg-white/10 bg-gray-200 backdrop-blur-sm border dark:border-white/20 border-gray-300 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 dark:shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] shadow-lg'
+                            className='w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]'
                         >
                             <img
                                 src={social.icon}
